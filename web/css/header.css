@@ -1,0 +1,89 @@
+header {
+  min-width: 1200px;
+  height: 150px;
+  border: 1px solid var(--thema-color);
+}
+
+header nav.member {
+  height: 30px;
+  background-color: var(--dark-color);
+}
+
+header nav.member div.center {
+  width: 1200px;
+  height: inherit;
+  margin: 0 auto;
+  text-align: right;
+  line-height: 30px;
+}
+
+header nav.member div.center a {
+  color: #aaa;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+header nav.member div.center a:hover {
+  color: white;
+}
+
+header div.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header div.bottom h1 {
+  height: 50%;
+}
+/* inline레벨은 부모로 취급안한다. */
+header div.bottom h1 img {
+  height: 110%;
+}
+/* 횡단은 높이를 주고 아코디언은 높이를 주지않는다. */
+nav.gnb {
+  height: 45px;
+}
+
+nav.gnb > ul {
+  height: inherit;
+  display: flex;
+}
+
+nav.gnb > ul > li {
+  height: inherit;
+}
+
+nav.gnb > ul > li:hover {
+  color: var(--sub-color);
+}
+
+nav.gnb > ul > li > a {
+  display: block;
+  line-height: 45px;
+  padding: 0 50px;
+  height: inherit;
+  text-transform: uppercase;
+}
+
+nav.gnb > ul > li > ul > li > a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  background: var(--thema-color);
+  text-align: center;
+  color: white;
+  transition: all 0.3s;
+}
+
+nav.gnb > ul > li > ul > li > a:hover {
+  background: var(--sub-color);
+}
+
+nav.gnb > ul > li > ul {
+  display: none;
+}

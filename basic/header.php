@@ -18,3 +18,6 @@
     </header>    
     <hr>
     <main>
+      <script>
+        console.log('안녕하세요');
+      </script>
