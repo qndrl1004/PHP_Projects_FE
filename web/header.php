@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/sub_layout.css">
 </head>
 <body>
     <header>
@@ -31,42 +33,7 @@
                </a>
             </h1>
             <nav class="gnb">
-                <ul>
-                    <li>
-                        <a href="#">ABOUT</a>
-                        <ul>
-                            <li><a href="#">인사말</a></li>
-                            <li><a href="#">오시는길</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">BUSINESS </a>
-                        <ul>
-                            <li><a href="#">사업소개</a></li>
-                            <li><a href="#">사업분야</a></li>
-                        </ul>
-                    </li>
-                     <li>
-                        <a href="#">GALLERY</a>
-                        <ul>
-                            <li><a href="#">갤러리</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">ONLINE</a>
-                        <ul>
-                            <li><a href="#">온라인문의</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">CUSTOMER</a>
-                        <ul>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">자유게시판</a></li>
-                            <li><a href="#">Q&A</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <?php include "sitemenu.php"?>
             </nav>
         </div>
     </header>

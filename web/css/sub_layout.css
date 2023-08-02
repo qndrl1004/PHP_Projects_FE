@@ -1,0 +1,60 @@
+section.sub_visual {
+  height: 300px;
+  background: black;
+  min-width: 1200px;
+}
+
+div.sub_center {
+  width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside.sidebar {
+  width: 215px;
+  top: 0;
+  position: sticky;
+}
+
+main.sub_content {
+  width: 940px;
+  min-height: 400px;
+  background: yellowgreen;
+}
+
+.side_banner {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.snb > ul > li,
+.snb > ul > li > a {
+  display: none;
+}
+
+.snb > ul > li > h6 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--thema-color);
+}
+
+.snb > ul > li > ul > li > a {
+  display: block;
+  padding: 7px 5px;
+  border-bottom: 1px dotted #ccc;
+  font-weight: 600;
+}
+
+.snb > ul > li > ul > li > a::before {
+  content: "-";
+}
+
+.snb > ul > li > ul > li > a:hover {
+  color: var(--thema-color);
+}
+
+.snb > ul > li > ul > li > a.active {
+  color: var(--sub-color);
+}

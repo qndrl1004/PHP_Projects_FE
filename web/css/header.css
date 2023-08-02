@@ -1,7 +1,10 @@
 header {
+  position: relative;
+  z-index: 10;
   min-width: 1200px;
   height: 150px;
   border: 1px solid var(--thema-color);
+  background: #fff;
 }
 
 header nav.member {
@@ -85,5 +88,11 @@ nav.gnb > ul > li > ul > li > a:hover {
 }
 
 nav.gnb > ul > li > ul {
+  display: none;
+}
+
+nav.gnb .menu_member,
+nav.gnb h6,
+nav.gnb .menu_sns {
   display: none;
 }

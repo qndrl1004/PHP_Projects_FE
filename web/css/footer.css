@@ -1,0 +1,89 @@
+footer {
+  min-width: 300px;
+}
+
+footer nav.sitemap {
+  padding: 30px 0;
+  background: var(--dark-color);
+}
+
+footer address.company {
+  padding: 30px 0;
+  background: #333;
+}
+
+footer address.company p {
+  width: 1200px;
+  margin: 0 auto;
+  color: #aaa;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer address.company p.info {
+  margin-bottom: 10px;
+}
+
+footer address.company p.info i {
+  margin: 0 3px;
+}
+
+footer address.company p.info i:not(:last-child, :nth-child(3))::after {
+  content: " |";
+  margin: 0 3px;
+}
+
+footer address.company p.copy {
+  font-weight: 700;
+}
+
+footer nav.sitemap > ul {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+footer nav.sitemap > ul > li {
+  flex: 1;
+}
+
+footer nav.sitemap > ul > li > a {
+  display: none;
+}
+
+footer nav.sitemap > ul > li > h6 {
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #ccc;
+}
+
+footer nav.sitemap > ul > li > ul > li {
+  margin-bottom: 5px;
+}
+
+footer nav.sitemap > ul > li > ul > li > a {
+  color: #999;
+}
+
+footer nav.sitemap > ul > li:not(.menu_sns) > ul > li > a::before {
+  content: "";
+}
+
+footer nav.sitemap > ul > li > ul > li > a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+footer nav.sitemap > ul > li {
+  text-align: center;
+}
+
+footer nav.sitemap > ul > li:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+footer nav.sitemap > ul > li.menu_sns > ul > li {
+  display: inline-block;
+  margin-right: 7px;
+  font-size: 1.5rem;
+}
