@@ -33,4 +33,15 @@ $(function () {
 
   $(`.snb .menu${menu}`).show();
   $(`.snb .menu_${menu}_${page}`).addClass("active");
+
+  let menuCategory = $(`.snb .menu${menu} > a`).text();
+  let pageName = $(`.snb a.menu_${menu}_${page}`).text();
+  $(`.breadcrumb li.category`).text(menuCategory);
+  $(`.breadcrumb li.page`).text(pageName);
+
+  $(`.sub_visual${menu}`).css({ display: "flex" });
+
+  setTimeout(function () {
+    $(`.sub_visual${menu}`).addClass("active");
+  }, 2);
 }); //ready
