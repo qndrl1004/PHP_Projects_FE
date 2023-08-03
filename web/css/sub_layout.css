@@ -97,12 +97,13 @@ div.sub_center {
   width: 1200px;
   margin: 30px auto;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 aside.sidebar {
   width: 215px;
-  top: 0;
+  top: 120px;
   position: sticky;
 }
 
@@ -112,7 +113,7 @@ main.sub_content {
   position: relative;
 }
 
-.side_banner {
+.sub_banner {
   width: 100%;
   margin-top: 100px;
 }

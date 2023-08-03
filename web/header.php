@@ -21,7 +21,7 @@
     <header>
         <nav class="member">
             <div class='center'>
-                <a href="#">처음으로</a>
+                <a href="./index.php">처음으로</a>
                 <a href="#">로그인</a>
                 <a href="#">회원가입</a>
                 <a href="#">SNS</a>
@@ -54,5 +54,5 @@
         <i class="fas fa-map-marker-alt"></i>
             <span>오시는길</span>
         </a>
-        <button><i class="fas fa-arrow-up"></i>top</button>
+        <button class="top"><i class="fas fa-arrow-up"></i>top</button>
     </nav>

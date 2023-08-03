@@ -26,6 +26,11 @@ $(function () {
       let winh = $(window).height();
       let h = $(".quick").innerHeight();
       $(".quick").css({ top: scry + winh * 0.5 - h * 0.5 });
+      if (scry >= 300) {
+        $(".quick").addClass("active");
+      } else {
+        $(".quick").removeClass("active");
+      }
       isQuickSrart = true;
     });
   };
@@ -48,5 +53,12 @@ $(function () {
 
   $(".gnb>ul>li").mouseleave(function () {
     $(this).children("ul").stop().slideUp(200);
+  });
+
+  $(".quick .top").click(function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 }); //ready
