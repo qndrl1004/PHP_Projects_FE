@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/sub_layout.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
     <header>
@@ -37,3 +38,21 @@
             </nav>
         </div>
     </header>
+
+    <nav class="quick">
+        <b>quick <br> menu</b>
+
+        <a href="./biz_intro.php">
+        <i class="fas fa-sd-card"></i>
+            <span>사업분야</span>
+        </a>
+        <a href="./online.php">
+        <i class="fas fa-globe-asia"></i>
+            <span>온라인상담</span>
+        </a>
+        <a href="./location.php">
+        <i class="fas fa-map-marker-alt"></i>
+            <span>오시는길</span>
+        </a>
+        <button><i class="fas fa-arrow-up"></i>top</button>
+    </nav>
