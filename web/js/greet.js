@@ -13,6 +13,20 @@ $(function () {
           $(this).removeClass("active");
         }
       });
+      // img---------------------------------
+      let t = $(".greet_section figure").offset().top;
+      let h = $(".greet_section figure").innerHeight();
+      let meta = 0 + (scry - (t - winh * 0.5 + h * 0.5)) * 0.2;
+      if (meta < -15) {
+        meta = -15;
+      }
+      if (meta > 15) {
+        meta = 15;
+      }
+      $(".greet_section figure img").css({
+        transform: `scale(1.4) translateY(${meta}%)`,
+      });
+
       isStartMotion = true;
     });
   };

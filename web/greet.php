@@ -11,8 +11,8 @@
          할 수 있게 되었고 기업들은 홈페이지를 이용하여 효율적인 마케팅을 할 수 있게되었습니다.
     </p>
     <figure>
-        <img src="./img/sub1/about-01.jpg" alt="">
-        <img src="./img/sub1/about-02.jpg" alt="">
+        <div><img src="./img/sub1/about-01.jpg" alt=""></div>
+        <div><img src="./img/sub1/about-02.jpg" alt=""></div>
     </figure>
     <p class="emphasis serif">
          그만큼 홈페이지는 기업활동의 <b class="point">중요한 요소가 되었고 매출과<br>

@@ -22,12 +22,16 @@
   justify-content: space-between;
 }
 
-.greet_section figure img {
+.greet_section figure div {
+  overflow: hidden;
   width: 49%;
-  padding: 10px;
+  border: 5px solid var(--thema-color);
   box-sizing: border-box;
-  background: var(--thema-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.greet_section figure div img {
+  width: 100%;
 }
 
 /* motion */
