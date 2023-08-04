@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700;800&family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/event.js"></script>
     <script src="https://kit.fontawesome.com/d309663a90.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/reset.css">
@@ -16,8 +17,12 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/sub_layout.css">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/greet.css">
+    <link rel="stylesheet" href="./css/preloader.css">
+    <link rel="stylesheet" href="./css/location.css">
 </head>
 <body>
+    <?php include 'preloader.php'?>
     <header>
         <nav class="member">
             <div class='center'>

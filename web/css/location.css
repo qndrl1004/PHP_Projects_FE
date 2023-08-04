@@ -1,0 +1,56 @@
+h1 {
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.location_section dl {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: var(--thema-color);
+}
+
+.location_section dl > * {
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.location_section dl dt {
+  width: 20%;
+  background: #eee;
+  color: black;
+}
+
+.location_section dl dd {
+  width: 80%;
+}
+
+.location_section iframe {
+  width: 100%;
+  margin-top: 30px;
+  height: 500px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 
+  motion
+*/
+
+.location_section > * {
+  opacity: 0;
+  transition: all 1ms;
+}
+
+.location_section > dl {
+  transform: translateX(-200px);
+}
+
+.location_section > iframe {
+  transform: translateX(200px);
+}
+
+.location_section > *.active {
+  opacity: 1;
+  transform: translateX(0);
+}
