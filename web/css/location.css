@@ -43,11 +43,11 @@ h1 {
 }
 
 .location_section > dl {
-  transform: translateX(-200px);
+  transform: translateX(-100px);
 }
 
 .location_section > iframe {
-  transform: translateX(200px);
+  transform: translateX(100px);
 }
 
 .location_section > *.active {

@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="./css/greet.css">
     <link rel="stylesheet" href="./css/preloader.css">
     <link rel="stylesheet" href="./css/location.css">
+    <link rel="stylesheet" href="./css/biz_intro.css">
+    <link rel="stylesheet" href="./css/biz_area.css">
+    <link rel="stylesheet" href="./css/gallery.css">
 </head>
 <body>
     <?php include 'preloader.php'?>
