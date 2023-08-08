@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="./css/biz_intro.css">
     <link rel="stylesheet" href="./css/biz_area.css">
     <link rel="stylesheet" href="./css/gallery.css">
+    <link rel="stylesheet" href="./css/online.css">
+    <link rel="stylesheet" href="./css/faq.css">
+    <link rel="stylesheet" href="./css/notice.css">
+    <link rel="stylesheet" href="./css/board.css">
 </head>
 <body>
     <?php include 'preloader.php'?>

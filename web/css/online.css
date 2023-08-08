@@ -1,0 +1,76 @@
+section.online form div {
+  display: flex;
+  margin-top: -1px;
+  border: 1px solid #eee;
+}
+
+section.online form div label {
+  width: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  font-weight: 600;
+}
+
+section.online form div p {
+  flex: 1;
+  padding: 5px;
+}
+
+section.online form div p * {
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+section.online form div p *:not(input[type="tel"]) {
+  width: 100%;
+}
+section.online form div p.tel {
+  display: flex;
+}
+
+section.online form div p.tel input {
+  flex: 1;
+}
+
+section.online form div p textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+section.online form div p.tel input:nth-child(2) {
+  margin: 0 5px;
+}
+
+section.online form div p *:focus {
+  background: var(--dark-color);
+  color: white;
+}
+
+section.online form > p {
+  padding: 7px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+section.online form > p button {
+  width: 100px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fff;
+}
+
+section.online form > p button[type="submit"] {
+  background: var(--sub-color);
+}
+
+section.online form > p button[type="reset"] {
+  background: var(--dark-color);
+}
+
+section.online form > p button[type="submit"]:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

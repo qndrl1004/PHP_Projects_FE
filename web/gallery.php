@@ -1,6 +1,6 @@
 <?php include "sub_header.php"?>
 <script src="./js/gallery.js"></script>
-            <h2 class="sub_title">gallery</h2>
+            <h2 class="sub_title">갤러리</h2>
             <div class="sub_summary">
             <p class="emphasis">
                 갤러리 및 시공 사례 입니다.
