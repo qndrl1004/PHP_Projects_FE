@@ -2,3 +2,198 @@
   height: 600px;
   background: var(--thema-color);
 }
+
+.feature {
+  display: flex;
+  width: 1200px;
+  margin: 40px auto;
+  justify-content: space-between;
+}
+
+.feature figure {
+  flex: 1;
+}
+
+.feature figure:not(:last-child) {
+  margin-right: 10px;
+}
+
+.feature figure a div {
+  border: 3px solid #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.feature figure a div img {
+  width: 100%;
+}
+
+.feature figure a figcaption h3 {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  margin: 10px auto;
+  background: var(--dark-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.feature figure a figcaption h3::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 100%;
+  border: 15px solid transparent;
+  border-left-color: var(--dark-color);
+}
+
+.feature figure a figcaption p {
+  position: relative;
+  font-weight: 600;
+  line-height: 160%;
+  padding-left: 15px;
+}
+
+.feature figure a figcaption p::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  left: 0;
+  top: 25px;
+  height: 10%;
+  background: var(--dark-color);
+}
+
+/* hover */
+
+.feature figure a:hover div {
+  border-color: var(--sub-color);
+}
+
+.feature figure a:hover h3 {
+  background: var(--point-color);
+}
+
+.feature figure a:hover h3::after {
+  border-left-color: var(--point-color);
+}
+
+.feature figure a:hover p {
+  color: var(--sub-color);
+}
+
+.feature figure a:hover p::after {
+  background: var(--sub-color);
+}
+
+/* scroll motion */
+.feature figure a div,
+.feature figure a figcaption h3,
+.feature figure a figcaption p {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.feature figure a div,
+.feature figure a figcaption p {
+  transform: translateX(50px);
+}
+
+.feature figure a figcaption h3 {
+  transform: translateX(-50px);
+}
+
+.feature figure.active a div,
+.feature figure.active a figcaption h3,
+.feature figure.active a figcaption p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.feature figure.active a div {
+  overflow: hidden;
+}
+
+/* latest */
+section.latest {
+  margin: 40px auto;
+}
+
+.latest .news {
+  margin-bottom: 10px;
+  padding: 20px 0;
+  background: #eee;
+}
+
+.latest .news h3 {
+  font-weight: 600;
+}
+.latest .news .center {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+.latest .news .rolling_container {
+  display: flex;
+  overflow: hidden;
+  width: 250px;
+}
+
+.latest .news .rolling_container .rolling {
+  display: inline-flex;
+  animation: rolling 20s linear infinite;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.latest .news .rolling_container .rolling p {
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.latest .news .rolling_container .rolling p::first-letter {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.latest .bottom {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.latest .bottom article {
+  box-sizing: border-box;
+}
+.latest .bottom article h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.latest .bottom .latest_notice {
+  padding-right: 30px;
+  width: 30%;
+}
+
+.latest .bottom .latest_gallery {
+  padding: 0 30px;
+  width: 50%;
+  border-left: 1px solid red;
+}
+
+.latest .bottom .banner {
+  width: 20%;
+  border-left: 1px solid red;
+}
+
+.latest .bottom .banner img {
+  width: 100%;
+}
