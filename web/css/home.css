@@ -1,6 +1,11 @@
+body {
+  min-width: 1200px;
+}
+
 .home_visual {
   position: relative;
   height: 600px;
+  min-width: 1200px;
   background: var(--thema-color);
   overflow: hidden;
 }
@@ -423,4 +428,27 @@ section.latest {
 
 .latest .bottom .latest_gallery ul li a:hover img {
   transform: scale(1.2);
+}
+
+/* motion*/
+.latest {
+  overflow: hidden;
+}
+.latest .bottom article {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.latest .bottom .latest_notice {
+  transform: translateX(-100px);
+}
+.latest .bottom .latest_gallery {
+  transform: translateY(-100px);
+}
+.latest .bottom .banner {
+  transform: translateX(100px);
+}
+.latest .bottom.active article {
+  opacity: 1;
+  transform: translate(0, 0);
 }

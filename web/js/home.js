@@ -22,7 +22,7 @@ $(function () {
     slidesPerGroup: 1,
   });
 
-  //motion
+  //motion2
   let isStartMotion = true;
   let rfaId1;
   let fnScrollMotion = function () {
@@ -46,6 +46,11 @@ $(function () {
       $(`.feature figure div img`).css({
         transform: `scale(1.3) translateY(${meta}%)`,
       });
+
+      //motion1
+      t = $(".latest .bottom").offset().top;
+      if (scry >= t - winh * 0.8) $(".latest .bottom").addClass("active");
+      else $(".latest .bottom").removeClass("active");
 
       isStartMotion = true;
     });
