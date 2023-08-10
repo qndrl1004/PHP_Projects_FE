@@ -3,6 +3,26 @@ $(function () {
   document.querySelector(".rolling_container").append(rolling);
   // $(".rolling").clone().append(".rolling_container");
 
+  //swiper
+  const swiper = new Swiper(".home_visual", {
+    //autoplay:false,
+    autoplay: { delay: 1000 },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".pagination",
+      type: "bullets",
+      clickable: true,
+    },
+
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+  });
+
+  //motion
   let isStartMotion = true;
   let rfaId1;
   let fnScrollMotion = function () {

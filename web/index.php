@@ -1,9 +1,52 @@
 <?php include "header.php"?>
 <script src="./js/home.js"></script>
     <section class="home_visual">
+    <div class="swiper-wrapper">
+        <figure class="swiper-slide">
+            <img src="./img/home/main01.jpg" alt="">
+            <figcaption>
+                <h6>beauty</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam deserunt ullam? Velit amet provident perferendis minus. Molestias totam inventore porro quasi repellat dolorem optio necessitatibus! Nihil odit dignissimos possimus?
+                </p>
+            </figcaption>
+        </figure>
+        <figure class="swiper-slide">
+            <img src="./img/home/main02.jpg" alt="">
+            <figcaption>
+                <h6>cool</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam deserunt ullam? Velit amet provident perferendis minus. Molestias totam inventore porro quasi repellat dolorem optio necessitatibus! Nihil odit dignissimos possimus?
+                </p>
+            </figcaption>
+        </figure>
+        <figure class="swiper-slide">
+            <img src="./img/home/main03.jpg" alt="">
+            <figcaption>
+                <h6>amazing</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam deserunt ullam? Velit amet provident perferendis minus. Molestias totam inventore porro quasi repellat dolorem optio necessitatibus! Nihil odit dignissimos possimus?
+                </p>
+            </figcaption>
+        </figure>
+        <figure class="swiper-slide">
+            <img src="./img/home/main04.jpg" alt="">
+            <figcaption>
+                <h6>strong</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam deserunt ullam? Velit amet provident perferendis minus. Molestias totam inventore porro quasi repellat dolorem optio necessitatibus! Nihil odit dignissimos possimus?
+               </p>
+            </figcaption>
+        </figure>
 
+      <!-- <div class="swiper-slide"><img src="./img/home/main01.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./img/home/main02.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./img/home/main03.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./img/home/main04.jpg" alt=""></div> -->
+    </div>
+    <div class="swiper-button-next"><i class="fas fa-arrow-right"></i></div>
+    <div class="swiper-button-prev"><i class="fas fa-arrow-left"></i></div>
+    <div class="pagination">
+
+    </div>
     </section>
-    <main>
+<main>
     <section class="feature">
         <figure>
             <a href="./biz_intro.php">
@@ -84,9 +127,63 @@
         <div class="bottom">
         <article class="latest_notice">   
         <h3><i class="fas fa-volume-up"></i></h3>
+        <ul>
+            <li>
+                <a href="#">[공지사항] Lorem, ipsum dolor.</a>
+                <time>2023-01-05</time>
+            </li>
+            <li>
+                <a href="#">[공지사항] Lorem, ipsum dolor.</a>
+                <time>2023-02-05</time>
+                
+            </li>
+            <li>
+                <a href="#">[공지사항] Lorem, ipsum dolor.</a>
+                <time>2023-03-05</time>
+                
+            </li>
+            <li>
+                <a href="#">[공지사항] Lorem, ipsum dolor.</a>
+                <time>2023-04-05</time>
+                
+            </li>
+            <li>
+                <a href="#">[공지사항] Lorem, ipsum dolor.</a>
+                <time>2023-04-05</time>
+                
+            </li>
+        </ul>
+        <a href="./notice.php" class=more>more</a>
         </article> 
         <article class="latest_gallery">   
-        <h3><i class="fas fa-camera-retro"></i></h3>
+        <h3><i class="fas fa-camera-retro"></i>GALLERY</h3>
+        <ul>
+            <li>
+            <a href="#">
+            <img src="./img/sub3/1.jpg" alt="">
+            <h4>img title1</h4>
+            </a>
+            </li>
+            <li>
+            <a href="#">
+            <img src="./img/sub3/2.jpg" alt="">
+            <h4>img title2</h4>
+            </a>
+            </li>
+            <li>
+            <a href="#">
+            <img src="./img/sub3/3.jpg" alt="">
+            <h4>img title3</h4>
+            </a>
+            </li>
+            <li>
+            <a href="#">
+            <img src="./img/sub3/4.jpg" alt="">
+            <h4>img title4</h4>
+            </a>
+            </li>
+        </ul>
+        <a href="./gallery.php" class=more>more</a>
         </article> 
         <article class="banner">   
             <a href="tel:010-1111-1111"></a>
@@ -94,6 +191,6 @@
         </article> 
         </div>
     </section>
-    </main>
+</main>
     
 <?php include "footer.php"?>
