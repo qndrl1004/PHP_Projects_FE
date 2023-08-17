@@ -103,7 +103,7 @@ $(function () {
       "beforeend",
       `
     <li>
-      <a href="">
+      <a href="./detail.php?id=${v.id}">
         <figure>
          <img src="./img/home/${v.img}" alt="">
           <i class="fas fa-arrow-right"></i>
@@ -117,6 +117,82 @@ $(function () {
   $(window).load(function () {
     $(".home-works ul").masonry({ itemSelector: ".home-works ul li" });
   });
+}); //ready
+
+$(function () {
+  let data = [
+    {
+      img: "promotion1.png",
+      title: ["내 브랜드와", "어울리는 사이트"],
+      desc: "내 브랜드 철학과 스토리가 돋보일 수 있는 사이트를 만들어보세요. 제작 유형에 따라 다양한 템플릿 사이트와 방법들이 준비되어 있습니다.",
+    },
+    {
+      img: "promotion2.png",
+      title: ["사이트에 맞는", "콘텐츠 디자인"],
+      desc: "내 브랜드를 돋보이게 하는 콘텐츠를 만들기 위해서는 다양한 접근이 필요합니다. 마땅한 이미지가 없다면 보정, 리터칭, 함성의 디자인 업무를 거쳐 퀼리티 있는 사이트를 만들 수 있습니다.",
+    },
+    {
+      img: "promotion3.png",
+      title: ["추가 비용없는", "디자인 소스"],
+      desc: "사이트 제작에 쓸만한 이미지가 없어서 고민이신가요? 디지털 콘텐츠 디자인에 필요한 다양한 소스들을 추가 비용없이 사용할 수 있습니다.",
+    },
+    {
+      img: "promotion4.png",
+      title: ["편리한 관리를 위한", "다양한 기능"],
+      desc: "채널톡, 카카오맵, 폼메일, 뉴스레터와 같이 다양한 기능이 필요하세요? 사이트 운영자가 편리하게 사용할 수 있는 맞춤 개발 환경을 제공하고, 관리 교육까지 받아볼 수 있어요.",
+    },
+  ];
+
+  data.forEach((v) => {
+    $(".home-promotion .center").append(`
+      <figure>
+      <div class="inner">
+        <div class="imgbox">
+          <img src="./img/home/${v.img}">
+        </div>
+        <figcaption class="section-summary">
+          <h2>
+            <b><i>${v.title[0]}</i></b></br>
+            <b><i>${v.title[1]}</i></b>
+          </h2>
+          <p>${v.desc}</p>
+        </figcaption>
+      </div>
+      </figure>
+    `);
+  });
+
+  var isStartMotion = true;
+  var rafId;
+  var scrollMotion = function () {
+    if (!isStartMotion) return;
+    isStartMotion = false;
+    rafId = requestAnimationFrame(function () {
+      //code start
+      $(".home-promotion figure").each(function () {
+        var t = $(this).offset().top;
+        var h = $(this).innerHeight();
+        var meta = 1 + Math.abs(scry - (t - winh * 0.5 + h * 0.5)) * -0.0007;
+        if (meta < 0) meta = 0;
+        $(this)
+          .children(".inner")
+          .css({
+            transform: `scale(${meta})`,
+            opacity: meta,
+          });
+      }); //each
+      //code end
+      isStartMotion = true;
+    }); //requestAnimationFrame
+  }; //scrollMotion
+  scrollMotion();
+  $(window)
+    .scroll(function () {
+      scrollMotion();
+    })
+    .resize(function () {
+      scrollMotion();
+    });
 }); //ready
 
 $(function () {
@@ -177,3 +253,65 @@ $(function () {
     },
   });
 });
+
+$(function () {
+  $(".home-price").ripples({
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04,
+  });
+});
+
+$(function () {
+  var isStartMotion = true;
+  var rafId;
+  var scrollMotion = function () {
+    if (!isStartMotion) return;
+    isStartMotion = false;
+    rafId = requestAnimationFrame(function () {
+      //code start
+      var t1 = $("section.home-section1").offset().top;
+      var t2 = $("section.home-section2").offset().top;
+      var t3 = $("section.home-section3").offset().top;
+      var t4 = $("section.home-section4").offset().top;
+      var t5 = $("section.home-section5").offset().top;
+      var t6 = $("section.home-section6").offset().top;
+      let c;
+      if (scry < t2) {
+        c = 1;
+      } else if (scry >= t2 && scry < t3) {
+        c = 2;
+      } else if (scry >= t3 && scry < t4) {
+        c = 3;
+      } else if (scry >= t4 && scry < t5) {
+        c = 4;
+      } else if (scry >= t5 && scry < t6) {
+        c = 5;
+      } else {
+        c = 6;
+      }
+
+      $(`.scroll-spy button`).removeClass("active");
+      $(`.scroll-spy .btn${c}`).addClass("active");
+      //code end
+      isStartMotion = true;
+    }); //requestAnimationFrame
+  }; //scrollMotion
+
+  scrollMotion();
+  $(window)
+    .scroll(function () {
+      scrollMotion();
+    })
+    .resize(function () {
+      scrollMotion();
+    }); //window event
+
+  $(".scroll-spy button").click(function () {
+    let n = $(this).val();
+    window.scrollTo({
+      top: $(`.home-section${n}`).offset().top,
+      behavior: "smooth",
+    });
+  });
+}); //ready
