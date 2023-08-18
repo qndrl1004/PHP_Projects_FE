@@ -1,5 +1,6 @@
-body::before {
+.home-visual::before {
   content: "";
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,20 +13,20 @@ body::before {
   transition: filter 1s, transform 20s linear;
 }
 @media screen and (min-width:1000px) {
-  body::before {
+  .home-visual::before {
     background-size: 60% auto;
     background-position: right center;
   }
 }
 @media screen and (max-width:1000px) {
-  body::before {
+  .home-visual::before {
     background-size: cover;
     background-position: center;
     filter: brightness(40%);
   }
 }
 
-body.active::before {
+.home-visual.active::before {
   transform: scale(1);
 }
 

@@ -1,7 +1,8 @@
 @use "mixin" as m;
 
-body::before {
+.home-visual::before {
   content: "";
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +23,8 @@ body::before {
   transform: scale(1.2);
   transition: filter 1s, transform 20s linear;
 } //body::before
-body.active::before {
+
+.home-visual.active::before {
   transform: scale(1);
 }
 

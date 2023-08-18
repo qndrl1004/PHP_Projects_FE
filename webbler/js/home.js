@@ -9,9 +9,9 @@ $(function () {
       //code start
       var t = $("section.home-feature").offset().top;
       if (scry >= t - winh * 0.5) {
-        $("section.home-visual .textbox, body").removeClass("active");
+        $("section.home-visual .textbox").removeClass("active");
       } else {
-        $("section.home-visual .textbox, body").addClass("active");
+        $("section.home-visual .textbox").addClass("active");
       }
       //code end
       isStartMotion = true;
