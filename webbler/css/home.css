@@ -184,9 +184,10 @@ section.home-works .center .section-summary {
   text-align: center;
 }
 section.home-works .center ul {
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  /* justify-content: space-between; */
 }
 section.home-works .center ul li {
   margin-bottom: 50px;
@@ -203,45 +204,48 @@ section.home-works .center ul li {
     margin-left: 3.3%;
   }
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width:500px) {
   section.home-works .center ul li {
     width: 100%;
   }
 }
-section.home-works .center ul a figure {
+section.home-works .center ul li a figure {
   overflow: hidden;
   position: relative;
-  border: 5px solid var(--blue);
-  box-shadow: 0 0 10 rgba(0, 0, 0, 0.2);
+  border: 5px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-section.home-works .center ul a figure img {
+section.home-works .center ul li a figure img {
   width: 100%;
+  transition: all 0.3s;
 }
-section.home-works .center ul a figure i {
+section.home-works .center ul li a figure i {
   position: absolute;
   left: 50%;
   top: 50%;
+  font-size: 2em;
   transform: translate(-50%, -50%);
   color: #fff;
   opacity: 0;
+  transition: all 0.3s;
 }
-section.home-works .center ul a h3 {
-  margin-top: 10px;
+section.home-works .center ul li a h3 {
+  margin-top: 20px;
   font-size: 1.2em;
   font-weight: 600;
   text-align: center;
 }
-section.home-works .center ul a:hover figure {
+section.home-works .center ul li a:hover figure {
   border-color: var(--green);
 }
-section.home-works .center ul a:hover figure img {
+section.home-works .center ul li a:hover figure img {
   transform: scale(1.2);
-  filter: url(#filter) brightness(70%);
+  filter: brightness(60%);
 }
-section.home-works .center ul a:hover figure i {
+section.home-works .center ul li a:hover figure i {
   opacity: 1;
 }
-section.home-works .center ul a:hover h3 {
+section.home-works .center ul li a:hover h3 {
   color: var(--green);
 }
 section.home-works .center a.more {
@@ -288,50 +292,12 @@ section.home-service .center .service-carousel .swiper-wrapper .swiper-slide img
   width: 100%;
 }
 
-/**/
-.home-process {
-  overflow: hidden;
-  padding: 10vh 0;
-  background: #fff;
-}
-.home-process .center {
-  width: min(95%, 1400px);
-  margin: 0 auto;
-}
-.home-process .center .section-summary {
-  text-align: center;
-}
-.home-process .center .section-summary p {
-  max-width: 400px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-.home-process .center .carousal .swiper-slide {
-  cursor: move;
-  box-sizing: border-box;
-  padding: 0 5vw;
-}
-.home-process .center .carousal .swiper-slide img {
-  width: 100%;
-}
-.home-process .center .carousal .swiper-slide h3 {
-  margin: 10px 0;
-  font-size: 1.3em;
-  font-weight: 600;
-}
-.home-process .center .carousal .swiper-slide p {
-  max-width: 500px;
-}
-.home-process .center .indicator {
-  text-align: center;
-}
-
 section.home-promotion {
   padding: 10vh 0;
-  background: #7395df;
+  background: #0d155f;
 }
 section.home-promotion video {
-  position: static;
+  position: sticky;
   top: 0;
   pointer-events: none;
   width: 100%;
@@ -367,7 +333,7 @@ section.home-promotion .center figure:not(:last-child) {
   }
 }
 @media screen and (max-width:1000px) {
-  section.home-promotion .center figure div.imgbox {
+  section.home-promotion .center figure .imgbox {
     margin-bottom: 4vh;
   }
   section.home-promotion .center figure > * {
@@ -376,24 +342,61 @@ section.home-promotion .center figure:not(:last-child) {
     margin-right: auto;
   }
 }
-section.home-promotion .center figure div.imgbox img {
+section.home-promotion .center figure .imgbox img {
   width: 100%;
 }
 section.home-promotion .center figure figcaption {
-  color: #fff;
+  color: #FFF;
 }
-section.home-price {
+.home-process {
+  overflow: hidden;
   padding: 10vh 0;
+  background: #fff;
+}
+.home-process .center {
+  width: min(95%, 1400px);
+  margin: 0 auto;
+}
+.home-process .center .section-summary {
+  text-align: center;
+}
+.home-process .center .section-summary p {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.home-process .center .carousel .swiper-slide {
+  cursor: move;
+  box-sizing: border-box;
+  padding: 0 5vw;
+}
+.home-process .center .carousel .swiper-slide img {
+  width: 100%;
+}
+.home-process .center .carousel .swiper-slide h3 {
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.home-process .center .carousel .swiper-slide p {
+  max-width: 500px;
+}
+.home-process .center .carousel .indicator {
+  text-align: center;
+}
+
+section.home-price {
+  padding: 20vh 0;
   background-image: url(../img/home/price-bg.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 section.home-price canvas {
+  left: 0;
+  top: 0;
   width: 100% !important;
   height: 100% !important;
-  top: 0;
-  left: 0;
 }
 section.home-price .center {
   display: flex;
@@ -404,29 +407,30 @@ section.home-price .center {
 section.home-price .center .section-summary {
   max-width: 500px;
   text-align: right;
-  color: #fff;
+  color: #FFF;
 }
 section.home-price .center .section-summary a {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
   transition: all 0.5s;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #FFF;
+  border: 1px solid #FFF;
   background-color: transparent;
 }
 section.home-price .center .section-summary a:hover {
   color: #333;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #FFF;
+  background-color: #FFF;
 }
 
 .scroll-spy {
+  z-index: 8;
   position: fixed;
-  top: 50%;
-  z-index: 5;
-  transform: translateY(-50%);
   right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  mix-blend-mode: difference;
 }
 @media screen and (max-width:1000px) {
   .scroll-spy {
@@ -437,37 +441,14 @@ section.home-price .center .section-summary a:hover {
   display: block;
   width: 10px;
   height: 10px;
-  margin: 20px auto;
+  margin: 20px 0;
   border-radius: 50%;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #000;
+  border: 1px solid #CCC;
   opacity: 0.7;
 }
 .scroll-spy button.active {
   opacity: 1;
   transform: scale(1.4);
-  background: #000;
-}
-
-.top-btn {
-  mix-blend-mode: difference;
-  z-index: 7;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #fff;
-  color: #fff;
-  transition: all 1s;
-  opacity: 0;
-  pointer-events: none;
-}
-.top-btn:hover {
-  color: #666;
-  background: #fff;
-}
-.top-btn.active {
-  opacity: 1;
-  pointer-events: all;
+  background: #FFF;
 }/*# sourceMappingURL=home.css.map */

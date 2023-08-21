@@ -1,4 +1,5 @@
 @use "mixin" as m;
+
 .works-bg {
   position: fixed;
   display: flex;
@@ -10,29 +11,29 @@
   background: var(--blue);
 
   p {
-    // inline-block
-    // display: inline-flex;
     font-size: min(15vw, 13em);
-    font-weight: 600;
-    letter-spacing: 3vh;
+    font-weight: 900;
+    letter-spacing: 3vw;
     white-space: nowrap;
-    color: rgba(#fff, 0.4);
+    color:rgba(#FFF,.5)
   }
   #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
   }
-}
+} //works-bg
+
 .works-content {
   position: relative;
   width: min(95%, 1400px);
   margin: 0 auto;
-  padding-top: 30vh;
+  padding-top: 25vh;
+
   figure {
     margin-bottom: 25vh;
     @media #{m.$minLg} {
-      //1,5 right 2,4,6 md 3,7 left
+      //1,5,9,13 오른쪽, 2,4,6,8중앙, 3,7,11,15
       &:nth-child(4n + 1) {
         margin-left: auto;
       }
@@ -41,51 +42,52 @@
         margin-right: auto;
       }
       width: 30%;
-    }
+    } //minLg
     @media #{m.$md} {
+      width: 70%;
       &:nth-child(odd) {
         margin-left: auto;
       }
-      width: 70%;
-    }
+    } //md
     @media #{m.$maxSm} {
       width: 100%;
-    }
+    } //maxLg
     a {
       &:hover {
         div {
-          border-color: #97eca6;
-          transform: scale(0.9);
+          border-color: var(--green);
+          transform: scale(0.95);
         }
-      }
+      } //a:hover
       div {
         overflow: hidden;
-        border: 7px solid var(--blue);
+        border: 7px solid #ddd;
         box-shadow: 0 0 20px rgba(#000, 0.2);
-        transition: all 1s;
+        transition: all 0.5s;
         img {
           width: 100%;
-        }
-      }
+        } //img
+      } //div
+
       figcaption {
         color: #fff;
         h2 {
           display: inline-block;
           position: relative;
+          margin: 15px 0;
           font-size: 1.5em;
           font-weight: 600;
-          margin: 15px 0;
           &::before {
             content: "";
             position: absolute;
             height: 10px;
-            width: 30%;
+            width: 50%;
             bottom: 0;
             left: 0;
             background: var(--green);
             mix-blend-mode: multiply;
-          }
-        }
+          } //before
+        } //h2
         p {
           white-space: nowrap;
           overflow: hidden;
@@ -104,13 +106,13 @@
               100% {
                 transform: translateX(-100%);
               }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+            } //rolling
+          } //span
+        } //p
+      } //figcaption
+    } //a
+  } //figure
+} //works-content
 
 .cursor {
   pointer-events: none;
@@ -120,9 +122,10 @@
   text-align: center;
   line-height: 80px;
   border-radius: 50%;
-  background: #97eca6;
+  background: rgba(#00fbb9, 0.7);
   z-index: 6;
+  top: 0;
   color: #fff;
-  opacity: 0.7;
-  transition: transform 1s;
+  transform: scale(0);
+  transition: transform 0.3s;
 }

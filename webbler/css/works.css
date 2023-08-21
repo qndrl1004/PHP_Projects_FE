@@ -10,10 +10,10 @@
 }
 .works-bg p {
   font-size: min(15vw, 13em);
-  font-weight: 600;
-  letter-spacing: 3vh;
+  font-weight: 900;
+  letter-spacing: 3vw;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 .works-bg #particles-js {
   position: absolute;
@@ -25,7 +25,7 @@
   position: relative;
   width: min(95%, 1400px);
   margin: 0 auto;
-  padding-top: 30vh;
+  padding-top: 25vh;
 }
 .works-content figure {
   margin-bottom: 25vh;
@@ -56,14 +56,14 @@
   }
 }
 .works-content figure a:hover div {
-  border-color: #97eca6;
-  transform: scale(0.9);
+  border-color: var(--green);
+  transform: scale(0.95);
 }
 .works-content figure a div {
   overflow: hidden;
-  border: 7px solid var(--blue);
+  border: 7px solid #ddd;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .works-content figure a div img {
   width: 100%;
@@ -74,15 +74,15 @@
 .works-content figure a figcaption h2 {
   display: inline-block;
   position: relative;
+  margin: 15px 0;
   font-size: 1.5em;
   font-weight: 600;
-  margin: 15px 0;
 }
 .works-content figure a figcaption h2::before {
   content: "";
   position: absolute;
   height: 10px;
-  width: 30%;
+  width: 50%;
   bottom: 0;
   left: 0;
   background: var(--green);
@@ -118,9 +118,10 @@
   text-align: center;
   line-height: 80px;
   border-radius: 50%;
-  background: #97eca6;
+  background: rgba(0, 251, 185, 0.7);
   z-index: 6;
+  top: 0;
   color: #fff;
-  opacity: 0.7;
-  transition: transform 1s;
+  transform: scale(0);
+  transition: transform 0.3s;
 }/*# sourceMappingURL=works.css.map */

@@ -170,4 +170,27 @@ header .center h1 img {
 }
 .mbtn.active .bar3 {
   transform: translateY(0) rotate(-45deg);
+}
+
+.top-btn {
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 7;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  transition: all 1s;
+}
+.top-btn:hover {
+  color: #000;
+  background: #FFF;
+}
+.top-btn.active {
+  opacity: 1;
+  pointer-events: all;
 }/*# sourceMappingURL=header.css.map */
