@@ -15,4 +15,30 @@ body {
   --sky: #03b3e4;
   --green: #8ccda2;
   --navy: #091a38;
+}
+
+body {
+  background-color: var(--navy);
+  background-image: url(../img/line-pattern.png);
+  background-size: 17px;
+  animation: bgmove 100s infinite linear;
+}
+@media screen and (min-width:1000px) {
+  body {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width:1000px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+@keyframes bgmove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }/*# sourceMappingURL=main.css.map */

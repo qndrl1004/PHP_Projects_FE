@@ -11,6 +11,7 @@ export const getMovies = (option, lang = ko, query = '') => {
 export const getMovie = (movieId, lang = ko, query = '') => {
   return new Promise(async resolve => {
     let result = await fetch(`${baseUrl}/movie/${movieId}${apiKey}${lang}${query}`)
+    console.log(result);
     let data = await result.json()
     resolve(data)
   })//promise

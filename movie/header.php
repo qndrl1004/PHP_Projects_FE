@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/common/video-modal.css">
+  <link rel="stylesheet" href="./css/header/header.css">
   <link rel="stylesheet" href="./css/home/home-visual.css">
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -18,5 +20,20 @@
 
 <body>
   <header>
-    header
+    <div class="center">
+      <h1>
+        <a href="./index.php">
+          <span class="hidden">영화 정보 사이트</span>
+          <img src="./img/logo.png" alt="">
+          <img src="./img/logo-text.png" alt="">
+        </a>
+      </h1>
+
+      <nav class="gnb">
+        <a href="./search.php">
+          <i class="fa-solid fa-magnifying-glass-arrow-right"></i> 
+          검색하기
+        </a>
+      </nav><!--gnb-->
+    </div><!-- center -->
   </header>

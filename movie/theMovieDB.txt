@@ -38,8 +38,10 @@ apikey발급
   /movie/{movie_id}/images
   영화리뷰
   /movie/{movieid}/reviews
-  출연진
+  출연진 및 제작진
   /movie/{movie_id}/credits
+  리뷰
+  /movie/{movie_id}/reviews
   인물
   /person/person_id
   인물 관련 영화 목록

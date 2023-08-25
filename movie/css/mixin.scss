@@ -1,6 +1,6 @@
 $min-xlg: "screen and (min-width:1400px)";
 $max-xlg: "screen and (max-width:1400px)";
-$xlg: "screen and (max-width:1400px) and (max-width:1000px)";
+$xlg: "screen and (min-width:1000px) and (max-width:1400px)";
 $min-lg: "screen and (min-width:1000px)";
 $max-lg: "screen and (max-width:1000px)";
 $min-sm: "screen and (min-width:500px)";
@@ -46,7 +46,7 @@ $md: "screen and (min-width:500px) and (max-width:1000px)";
 }
 
 @mixin button($color1, $border-color1, $bg-color1, $color2, $border-color2, $bg-color2) {
-  padding: 10px 20px;
+  padding: 7px 30px;
   transition: all 0.5s;
   color: $color1;
   border: 1px solid $border-color1;
@@ -66,5 +66,12 @@ $md: "screen and (min-width:500px) and (max-width:1000px)";
 } 
 
 @mixin box-shadow{
-  box-shadow: 0 0 5px rgba(#000,.5);
+  box-shadow: 0 0 20px rgba(#000, .7);
+}
+
+@mixin pos-center{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
 }
