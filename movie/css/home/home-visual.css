@@ -2,11 +2,12 @@
   position: relative;
   height: min(70vh, 450px);
   overflow: hidden;
+  margin-bottom: 5vh;
   background: var(--navy);
   cursor: grab;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 .home-visual::before {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   content: "";
   pointer-events: none;
   position: absolute;
@@ -57,7 +58,7 @@
   font-size: 1.2em;
 }
 .home-visual div.swiper-wrapper figure.swiper-slide figcaption h6 {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: min(8vw, 5em);
   white-space: nowrap;
   line-height: 1.3em;
@@ -127,7 +128,7 @@
 }
 .home-visual button.wheel-btn i {
   color: rgba(255, 255, 255, 0.7);
-  animation: jump 0.5s infinite alternate;
+  animation: jump 1s infinite alternate;
 }
 
 @keyframes jump {

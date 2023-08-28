@@ -1,6 +1,6 @@
 $min-xlg: "screen and (min-width:1400px)";
 $max-xlg: "screen and (max-width:1400px)";
-$xlg: "screen and (min-width:1000px) and (max-width:1400px)";
+$xlg: "screen and (max-width:1000px) and (max-width:1400px)";
 $min-lg: "screen and (min-width:1000px)";
 $max-lg: "screen and (max-width:1000px)";
 $min-sm: "screen and (min-width:500px)";
@@ -21,20 +21,21 @@ $md: "screen and (min-width:500px) and (max-width:1000px)";
 }
 
 @mixin scrollbar {
-  @media (hover:hover){ 
+  @media (hover:hover){ //모바일에서 적용안함
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       border-radius: 10px;
-      background-color: #f5f5f5;
+      background-color: #000;
     }
     &::-webkit-scrollbar {
       width: 12px; 
-      background-color: #f5f5f5;
+      height: 12px;
+      background-color:transparent;
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      background-color: #5700fa;
+      background-color: var(--sky);
     }
   }//media
 }//scrollbar
@@ -66,12 +67,12 @@ $md: "screen and (min-width:500px) and (max-width:1000px)";
 } 
 
 @mixin box-shadow{
-  box-shadow: 0 0 20px rgba(#000, .7);
+  box-shadow: 0 0 20px rgba(#000,.5);
 }
 
 @mixin pos-center{
   position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

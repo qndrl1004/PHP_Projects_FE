@@ -1,66 +1,92 @@
-import { options, ko, en, imgPaths } from "./api-data.js"
-import { getMovie, getMovies, getVideos } from "./api-functions.js"
-import { qySel, qySelAll, setSwiper } from "./functions.js"
-import { videoResize } from "./video-modal.js"
+import { options, ko, en, imgPaths } from "./api-data.js";
+import {
+  getMovies,
+  getMovie,
+  getVideos,
+  displayMovies,
+} from "./api-functions.js";
+import { qySel, qySelAll, setSwiper } from "./functions.js";
+import { videoResize } from "./video-modal.js";
 
 const setVisual = () => {
-  return new Promise(async resolve => {
-    let movieData = await getMovies(options.playing)
-    let movies = movieData.results
-    movies = movies.slice(0, 5)
-
+  return new Promise(async (resolve) => {
+    let movieData = await getMovies(options.playing);
+    let movies = movieData.results;
+    movies = movies.slice(0, 5);
     for (let movie of movies) {
-      let { id, title, original_title, overview, backdrop_path } = movie
+      let { id, original_title, title, overview, backdrop_path } = movie;
       if (!overview) {
-        let movieEn = await getMovie(id, en)//영어로 된 영화정보를 가져온다
-        overview = movieEn.overview
-      }//if !overview
-      overview = overview.slice(0, 150) + '...'
-
-      let imgPath = `${imgPaths.original}${backdrop_path}`
-      let videoData = await getVideos(id)
-      if (videoData.results.length === 0) {
-        videoData = await getVideos(id, en)
+        //한국어 영화 정보가 없다면
+        let movieEn = await getMovie(id, en); //영어로된 영화정보
+        overview = movieEn.overview;
       }
-      let videoKey = videoData.results[0].key
-      qySel('.home-visual .swiper-wrapper').insertAdjacentHTML('beforeend', `
-        <figure class="swiper-slide">
-          <img src="${imgPath}" alt="">
-          <figcaption>
-            <small class="original-title">${original_title}</small>
-            <h6 class="title">${title}</h6>
-            <p class="overview">
-              ${overview}
-            </p>
-            <button class="play-btn" value="${videoKey}">
-              <i class="fa-brands fa-google-play"></i> 재생
-            </button>
-            <button class="detail-btn" value="${id}">
-              <i class="fa-solid fa-circle-info"></i> 상세정보
-            </button>
-          </figcaption>
-        </figure>
-      `)//insertAdjacentHTML
-    }//for of
+      overview = overview.slice(0, 150) + "...";
+      let imgPath = `${imgPaths.original}${backdrop_path}`; //imgPaths.original+backdrop_path
+      let videoData = await getVideos(id);
+      if (videoData.results.length === 0) {
+        videoData = await getVideos(id, en);
+      }
+      let videoKey = videoData.results[0].key;
+      qySel(".home-visual .swiper-wrapper").insertAdjacentHTML(
+        "beforeend",
+        `
+            <figure class="swiper-slide">
+            <img src="${imgPath}" alt="">
+            <figcaption>
+              <small class="original-title">${original_title}</small>
+              <h6 class="title">${title} </h6>
+              <p class="overview">
+                  ${overview}
+              </p>
+              <button class="play-btn" value="${videoKey}">
+                  <i class="fa-brands fa-google-play"></i>
+                  재생</button>
+              <button class="detail-btn" value="${id}">
+                  <i class="fa-solid fa-circle-info"></i>
+                  상세정보</button>
+            </figcaption>
+            </figure>
+            `
+      );
+    } //for of
 
-    qySelAll('.home-visual .play-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        qySel('.video-modal').style.display = 'block'
-        qySel('.video-modal iframe').src = `http://www.youtube.com/embed/${e.target.value}?playlist=${e.target.value}&autoplay=1&loop=1&mute=1&playsinline=1"`
-        videoResize()
-      })//click
-    })//forEach
+    qySelAll(".home-visual .play-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        qySel(".video-modal").style.display = "block";
+        qySel(
+          ".video-modal iframe"
+        ).src = `http://www.youtube.com/embed/${e.target.value}?playlist=${e.target.value}&autoplay=1&loop=1&mute=1&playsinline=1`;
+        videoResize();
+      });
+    });
+    qySelAll(".home-visual .detail-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        location.href = `./detail.php?id=${e.target.value}`;
+      });
+    });
 
-    qySelAll('.home-visual .detail-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        location.href = `./detail.php?id=${e.target.value}`
-      })//click
-    })//forEach
+    setSwiper(".home-visual", 4000);
 
-    setSwiper('.home-visual', 3000)
+    resolve();
+  });
+};
 
-    resolve()
-  })//promise
-}//setVisual
+const setHomeSection = (option, sectionName) => {
+  return new Promise(async (resolve) => {
+    const moviesData = await getMovies(option);
+    let movies = moviesData.results.slice(0, 10);
+    await displayMovies(
+      movies,
+      `${sectionName} .carousel .swiper-wrapper`,
+      "swiper-slide"
+    );
+    setSwiper(`${sectionName} .carousel`, false, true);
+    resolve();
+  });
+};
 
-await setVisual()
+await setVisual();
+await setHomeSection(options.poplar, ".popular-section");
+await setHomeSection(options.upcoming, ".upcomming-section");
+await setHomeSection(options.rated, ".rated-section");
+await setHomeSection(options.trend, ".trend-section");
