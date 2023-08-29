@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="./css/common/common-layout.css">
   <link rel="stylesheet" href="./css/footer/footer.css">
   <link rel="stylesheet" href="./css/home/home.css">
+  <link rel="stylesheet" href="./css/common/slide.css">
   <script src="https://kit.fontawesome.com/6de427c617.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="./js/common.js" type="module"></script>
   <title>tmdb</title>
 </head>
 
@@ -39,3 +41,7 @@
       </nav>
     </div>
   </header>
+
+  <button class="top-btn">
+  <i class="fa-solid fa-up-long"></i>
+  </button>

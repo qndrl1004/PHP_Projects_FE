@@ -5,11 +5,8 @@
     height: min(70vh, 450px);
     overflow: hidden;
     margin-bottom: 5vh;
-    background: var(--navy);
     cursor: grab;
-    &.active{
-        
-    }
+    @include m.box-shadow;
     &::before{
         @include m.box-shadow;
         content: '';

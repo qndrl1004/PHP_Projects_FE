@@ -3,8 +3,8 @@
   height: min(70vh, 450px);
   overflow: hidden;
   margin-bottom: 5vh;
-  background: var(--navy);
   cursor: grab;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 .home-visual::before {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

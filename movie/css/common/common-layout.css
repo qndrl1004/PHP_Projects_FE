@@ -76,8 +76,8 @@ section.movie-grid-section div.grid-container .no-data {
   text-decoration: line-through;
 }
 section.movie-grid-section div.grid-container figure {
-  box-sizing: border-box;
   padding: 0 10px;
+  box-sizing: border-box;
   height: auto;
 }
 section.movie-grid-section div.grid-container figure a {
@@ -88,8 +88,8 @@ section.movie-grid-section div.grid-container figure a {
 }
 section.movie-grid-section div.grid-container figure a:hover {
   position: relative;
-  transform: scale(1.1);
   z-index: 11;
+  transform: scale(1.1);
   background: var(--green);
 }
 section.movie-grid-section div.grid-container figure a:hover div.imgbox img {
@@ -101,9 +101,9 @@ section.movie-grid-section div.grid-container figure a div.imgbox {
 }
 section.movie-grid-section div.grid-container figure a div.imgbox img {
   width: 100%;
-  filter: brightness(70%);
-  transition: all 0.3s;
+  filter: brightness(60%);
   min-height: 400px;
+  transition: all 0.3s;
 }
 section.movie-grid-section div.grid-container figure a div.imgbox span {
   position: absolute;
@@ -112,13 +112,13 @@ section.movie-grid-section div.grid-container figure a div.imgbox span {
   right: -40px;
   top: -40px;
   transform: rotate(45deg);
-  background: red;
 }
 section.movie-grid-section div.grid-container figure a div.imgbox small {
   position: absolute;
   color: #fff;
   right: 5px;
   top: 5px;
+  font-weight: 600;
 }
 section.movie-grid-section div.grid-container figure a figcaption {
   padding: 10px;
@@ -140,11 +140,27 @@ section.movie-grid-section div.grid-container figure a figcaption p {
 section.swiper-section .carousel {
   position: relative;
 }
+section.swiper-section .carousel::after, section.swiper-section .carousel::before {
+  content: "";
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  right: 100%;
+  top: 0;
+  -webkit-backdrop-filter: blur(2px) brightness(60%);
+          backdrop-filter: blur(2px) brightness(60%);
+}
+section.swiper-section .carousel::before {
+  left: 100%;
+}
+section.swiper-section .carousel::after {
+  right: 100%;
+}
 @media (hover: hover) {
   section.swiper-section .carousel:hover .next,
   section.swiper-section .carousel:hover .prev {
     opacity: 1;
-    display: block;
   }
 }
 section.swiper-section .carousel .next,
@@ -156,7 +172,7 @@ section.swiper-section .carousel .prev {
   transform: translateY(-50%);
   font-size: 3em;
   opacity: 0;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 @media (hover: hover) {
   section.swiper-section .carousel .next,
@@ -164,9 +180,9 @@ section.swiper-section .carousel .prev {
     display: block;
   }
 }
-section.swiper-section .carousel .prev {
-  left: 0;
-}
 section.swiper-section .carousel .next {
   right: 0;
+}
+section.swiper-section .carousel .prev {
+  left: 0;
 }/*# sourceMappingURL=common-layout.css.map */

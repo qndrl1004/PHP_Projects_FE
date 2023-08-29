@@ -1,28 +1,23 @@
-export let baseurl = "https://api.themoviedb.org/3";
-export let apikey = "?api_key=9638edaa0729b0892818383ee3bfc52f";
-export let ko = "&language=ko-KR";
-export let en = "&language=en-US";
+export let baseurl = 'https://api.themoviedb.org/3'
+export let apikey = '?api_key=9638edaa0729b0892818383ee3bfc52f'
+export let ko = '&language=ko-KR'
+export let en = '&language=en-US'
 export let imgPaths = {
-  original: "https://image.tmdb.org/t/p/original",
-  w500: "https://image.tmdb.org/t/p/w500",
-};
+    original : 'https://image.tmdb.org/t/p/original',
+    w500: 'https://image.tmdb.org/t/p/w500'
+}
 
-export let gradeColor = [
-  "red",
-  "orangered",
-  "orange",
-  "yellowgreen",
-  "blueviolet",
-];
+export let gradecolor = ['red', 'orangered', 'orange', 'yellowgreen', 'blueviolet'];
+
 export let options = {
-  playing: "/movie/now_playing",
-  poplar: "/movie/popular",
-  trend: "/trending/movie/week",
-  rated: "/movie/top_rated",
-  upcoming: "/movie/upcoming",
-};
+  playing : '/movie/now_playing',
+  poplar : '/movie/popular',
+  trend : '/trending/movie/week',
+  rated : '/movie/top_rated',
+  upcoming: '/movie/upcoming'
+}
 
-export let genre = {
+export const genreList = {
   28: "액션",
   12: "모험",
   16: "애니메이션",
@@ -42,4 +37,4 @@ export let genre = {
   53: "스릴러",
   10752: "전쟁",
   37: "서부극",
-};
+}
