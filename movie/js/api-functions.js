@@ -1,5 +1,5 @@
 import { baseurl, apikey, en, ko, options, imgPaths, gradecolor, genreList } from "./api-data.js";
-import { qySel } from "./functions.js";
+import { qySel, qySelAll, videoResize } from "./functions.js";
 
 export const getMovies = (option,lang=ko)=>{
     return new Promise(async (resolve) => {
@@ -38,7 +38,6 @@ export const displayMovies = (data, container, gridClassName = "") => {
     qySel(container).innerHTML = '<p class="no-data">관련 영화목록이 존재하지 않습니다.</p>'
     return false
     }
-    return new Promise((resolve) => {
       data.forEach((movie) => {
         let {id, poster_path, title, vote_average, release_date,genre_ids} = movie
         let imgPath = (poster_path) ? `${imgPaths.w500}${poster_path}` : './img/no-imge.jpg';
@@ -68,8 +67,6 @@ export const displayMovies = (data, container, gridClassName = "") => {
             `
         );
       });
-      resolve();
-    });
   };
 
 export const getCredits = (movieId, long=ko) => {
@@ -78,4 +75,55 @@ export const getCredits = (movieId, long=ko) => {
         const data = result.json()
         resolve(data)
     })
+}
+
+export const getSimilarMovies = (movieId,long=ko) => {
+    return new Promise(async resolve => {
+        let result = await fetch(`${baseurl}/movie/${movieId}/similar${apikey}${long}`)
+        let data = await result.json()
+        resolve(data)
+    })
+}
+
+export const displayVideos = (data, conatiner) => {
+    if(data.length === 0){
+        qySel(conatiner).innerHTML = '<p class="no-data">관련 영상이 존재하지 않습니다.</p>'
+        return false
+    }
+    data.forEach(video => {
+        let {key} = video
+        qySel(conatiner).insertAdjacentHTML('beforeend',`
+        <button value="${key}">
+            <img src="https://img.youtube.com/vi/${key}/mqdefault.jpg">
+        </button>
+        `)
+    })
+
+    qySelAll(`${conatiner} button`).forEach(btn=>{
+        btn.addEventListener('click', e => {
+            qySel('.video-modal').style.display = 'block'
+            let youtubeId = e.currentTarget.value
+            qySel('.video-modal iframe').src = `http://www.youtube.com/embed/${youtubeId}?playlist=${youtubeId}&autoplay=1&loop=1&mute=1&playsinline=1`
+            videoResize()
+        })
+    })
+}
+
+export const displayImages = (data, conatiner) => {
+    if(data.length === 0){
+        qySel(conatiner).innerHTML = '<p class="no-data">관련 이미지가 존재하지 않습니다.</p>'
+        return false
+    } 
+    data.forEach(img => {
+        let {file_path} = img
+        let imgPathOriginal = `${imgPaths.original}${file_path}`
+        let imgPathW500 = `${imgPaths.w500}${file_path}`
+        qySel(conatiner).insertAdjacentHTML('beforeend',`
+            <a class="viewbox-btn" href="${imgPathOriginal}">
+                <img src="${imgPathW500}" alt>
+            </a>
+        `)
+    })
+    $('.viewbox-btn').viewbox()
+
 }
