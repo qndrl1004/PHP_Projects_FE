@@ -14,40 +14,40 @@
                     <small class="vote-cnt"></small>
                 </li>
                 <li>
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <em class="hour"></em>
-                <small>hour</small>
-                <em class="min"></em>
-                <small>min</small>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <em class="hour"></em>
+                    <small>hour</small>
+                    <em class="min"></em>
+                    <small>min</small>
                 </li>
                 <li>
-                <i class="fa-regular fa-calendar-check"></i>
-                <small class="date"></small>
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <small class="date"></small>
                 </li>
                 <li class="genres">
-                <i class="fa-solid fa-tags"></i>
-                <small class="genre"></small>
+                    <i class="fa-solid fa-tags"></i>
+                    <small class="genre"></small>
                 </li>
             </ul>
             <p class="overview"></p>
 
             <ul class="info">
-            <li>
-                <i class="fa-solid fa-clapperboard"></i>
-                <small>제목</small>
-                <em class="original_title"></em>
-            </li>
-            <li>
-                <i class="fa-solid fa-building"></i>
-                <small>제작사</small>
-                <em class="production"></em>
-            </li>
-            <li>
-                <i class="fa-solid fa-user-tie"></i>
-                <small>제작자</small>
-                <em class="producer"></em>
-            </li>
-            <li>
+                <li>
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <small>제목</small>
+                    <em class="original_title"></em>
+                </li>
+                <li>
+                    <i class="fa-solid fa-building"></i>
+                    <small>제작사</small>
+                    <em class="production"></em>
+                </li>
+                <li>
+                    <i class="fa-solid fa-user-tie"></i>
+                    <small>제작자</small>
+                    <em class="producer"></em>
+                </li>
+                <li>
                     <i class="fa-solid fa-user-gear"></i>
                     <small>감독</small>
                     <em class="director"></em>
@@ -56,10 +56,20 @@
         </div>
     </section>
 
+    <section class="common-section scroll-section people-section">
+        <h2>
+            <i class="fa-solid fa-users"></i>
+            <em>출연진</em>
+        </h2>
+        <div class="grid-container">
+
+        </div>
+    </section>
+
     <section class="common-section scroll-section img-section">
         <h2>
-        <i class="fa-solid fa-image"></i>
-        <em>관련이미지</em>
+            <i class="fa-solid fa-image"></i>
+            <em>관련이미지</em>
         </h2>
         <div class="grid-container">
 
@@ -68,38 +78,26 @@
 
     <section class="common-section scroll-section video-section">
         <h2>
-        <i class="fa-solid fa-video"></i>
-        <em>관련 영상</em>
+            <i class="fa-solid fa-video"></i>
+            <em>관련 영상</em>
         </h2>
         <div class="grid-container"></div>
     </section>
-    
+
     <section class="common-section movie-grid-section wrap-section similar-section">
         <h2>
-        <i class="fa-solid fa-photo-film"></i>
-        <em>유사한 영화</em>
+            <i class="fa-solid fa-photo-film"></i>
+            <em>유사한 영화</em>
         </h2>
         <div class="grid-container">
 
         </div>
     </section>
 
-    
+
 </main>
 
-<!-- 
-<i class="fa-solid fa-clock-rotate-left"></i>
-<i class="fa-regular fa-calendar-check"></i>
-<i class="fa-solid fa-tags"></i>
 
-<i class="fa-solid fa-clapperboard"></i>
-<i class="fa-solid fa-building"></i>
-<i class="fa-solid fa-user-tie"></i>
-<i class="fa-solid fa-user-gear"></i>
-<i class="fa-solid fa-users"></i>
-
-
-
- -->
+<?php include "person-modal.php" ?>
 <?php include "video-modal.php" ?>
 <?php include "footer.php" ?>

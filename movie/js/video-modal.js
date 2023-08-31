@@ -1,16 +1,10 @@
-import { qySel, videoResize } from "./functions.js";
+import { closeModal, qySel, videoResize } from "./functions.js";
 
-qySel('.video-modal .close').addEventListener('click', e => {
-    qySel('.video-modal iframe').src = ''
-    qySel('.video-modal').style.display='none'
-})
+qySel(".video-modal .modal-close-btn").addEventListener("click", (e) => {
+  qySel(".video-modal iframe").src = "";
+  closeModal(".video-modal");
+});
 
-
-
-window.addEventListener('resize', () => {
-    videoResize()
-})
-
-
-// window.innerHeight
-// window.innerWidth
+window.addEventListener("resize", () => {
+  videoResize();
+});
