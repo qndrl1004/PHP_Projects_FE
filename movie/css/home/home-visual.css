@@ -4,10 +4,9 @@
   overflow: hidden;
   margin-bottom: 5vh;
   cursor: grab;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 .home-visual::before {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   content: "";
   pointer-events: none;
   position: absolute;
@@ -45,6 +44,7 @@
   filter: brightness(60%);
   transform: scale(1.1);
   transition: transform 10s linear, filter 1s;
+  min-height: 400px;
 }
 .home-visual div.swiper-wrapper figure.swiper-slide figcaption {
   position: absolute;
@@ -58,7 +58,7 @@
   font-size: 1.2em;
 }
 .home-visual div.swiper-wrapper figure.swiper-slide figcaption h6 {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: min(8vw, 5em);
   white-space: nowrap;
   line-height: 1.3em;
@@ -128,9 +128,8 @@
 }
 .home-visual button.wheel-btn i {
   color: rgba(255, 255, 255, 0.7);
-  animation: jump 1s infinite alternate;
+  animation: jump 0.5s infinite alternate;
 }
-
 @keyframes jump {
   0% {
     transform: translateY(-3px);

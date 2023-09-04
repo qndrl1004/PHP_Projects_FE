@@ -1,14 +1,14 @@
 header {
   position: fixed;
   z-index: 100;
-  top: 0;
   left: 0;
+  top: 0;
   width: 100%;
   background-color: var(--navy);
   background-image: url(../../img/check-pattern.png);
   background-size: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  animation: bgmove 100s infinite linear;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  animation: bgmove 150s infinite linear;
 }
 @media screen and (min-width:1000px) {
   header {
@@ -28,30 +28,63 @@ header .center {
   margin: 0 auto;
   height: inherit;
 }
-header h1 {
-  height: 55%;
+header .center h1 {
+  height: 50%;
 }
-header h1 a {
+header .center h1 a {
   display: flex;
   height: 100%;
   perspective: 1000px;
 }
-header h1 a img {
+header .center h1 a img {
   height: 100%;
-  margin-right: 15px;
-  transition: all 0.3s;
+  margin-right: 10px;
+  transition: all 0.5s;
 }
-header h1:hover img:first-of-type {
+header .center h1:hover img:first-of-type {
   transform: rotateY(360deg);
 }
-header h1:hover img:last-of-type {
+header .center h1:hover img:last-of-type {
   transform: rotateX(360deg);
 }
-header .gnb a {
+header .center .gnb {
+  position: relative;
+}
+header .center .gnb div.menu-list {
+  position: absolute;
+  top: 0;
+  right: 110%;
+  display: inline-block;
+}
+header .center .gnb div.menu-list button.toggle-btn:active {
+  color: var(--green);
+}
+header .center .gnb div.menu-list ul {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 5px;
+  background: #000;
+}
+header .center .gnb div.menu-list ul.active {
+  display: block;
+}
+header .center .gnb div.menu-list ul li {
+  margin: 7px 0;
+  white-space: nowrap;
+}
+header .center .gnb div.menu-list ul li a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+header .center .gnb a.goto-search {
   font-weight: 600;
   transition: all 0.3s;
 }
-header .gnb a:hover {
+header .center .gnb a.goto-search:hover {
   color: var(--green);
 }
 
@@ -66,7 +99,7 @@ header .gnb a:hover {
   transition: all 0.5s;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 @media (hover: hover) {
   .top-btn:hover {
